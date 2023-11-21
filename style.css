@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Playfair+Display:wght@600;700&family=Poppins:wght@200;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #f7edff;
+}
+.buttons{
+    margin: 50px;
+}
+.buttons button{
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+.toastBox{
+    padding: 20px;
+    
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden; 
+    color: #333;
+}
+.tst{
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft {
+    100%{
+      transform: translateX(0);
+    }
+}
+.toastBox i{
+    color: green;
+    margin: 0 20px;
+    font-size: 35px;
+}
+.error i{
+    color: red;
+}
+.Invalid i{
+    color: orange;
+}
+.tst::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: green;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    animation: anim 5s linear forwards;
+}
+@keyframes anim{
+    100%{
+        width: 0;
+    }
+}
+.Invalid::after{
+    background: orange;
+}
+.error::after{
+    background: red;
+}
